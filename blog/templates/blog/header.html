@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title> {% block title %}{% endblock %}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e4488">
+   {% load staticfiles %}
+  <link rel="shortcut icon" href="{% static 'personal/images/favicon.gif' %}" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600italic,700,800' rel='stylesheet'
+    type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'personal/css/style.css' %}" type="text/css" />
+</head>
+
+<body style="background:#3be8b0;background-image:url('{% static 'personal/images/bg-overlay.png' %}');background-repeat: repeat;">
+  <nav class="navbar navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false">
+         <img src="{% static 'personal/images/navbar.png' %}" height="20px" width="30px" alt="+" />
+          </button>
+        <a class="navbar-brand" href="/">Varun Sekhar</a>
+      </div>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+           <li><a href="/contact">Contact</a></li>
+          <li><a href="/list_all_posts">Blog Post</a></li>
+          <li><a href="{% static 'personal/docs/resume.pdf' %}" target="_blank">Resume</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Varun Sekhar</h3>
+          </div>
+          <div class="panel-body" style="padding: 0;text-align: center;">
+            <a href="/about">
+              <img class="img-responsive" src="{% static 'personal/images/c.jpg' %}" alt="profile" /></a>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Social Links</h3>
+          </div>
+          <div class="panel-body">
+            <ul class="left-social list-inline">
+              <li>
+                <a href="https://www.linkedin.com/in/varun-sekhar-86b315136/" title="linkedin" target="_blank">
+                  <img src="{% static 'personal/images/social-ico/linkedin.png' %}" alt="Linkedin" style="border-radius:5px" /> LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/iamvarunsekhar" title="github" target="_blank"> <img src="{% static 'personal/images/social-ico/git.png' %}" alt="Image" width="32" height="32" style="border-radius:5px"
+                  /> Github
+                </a>
+              </li>
+        
+              <li>
+                <a href="https://instagram.com/_ozilfan_" title="insta" target="_blank"> <img src="{% static 'personal/images/social-ico/insta.jpg' %}" alt="image" width="32" height="32" style="border-radius:5px"
+                  /> Instagram
+                </a>
+              </li>
+
+              <li>
+                <a href="#" title="9567509606"> <img src="{% static 'personal/images/social-ico/whatsapp.png' %}" alt="img" width="32" height="32" style="border-radius:5px"
+                  /> Whatsapp
+                </a>
+              </li>
+              <li>
+                <a href="#" title="varunsekhar@outlook.com"> <img src="{% static 'personal/images/social-ico/mail.png' %}" alt="img" width="32" height="32" /> Mail
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div>
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active"><a href="#popular" aria-controls="popular" role="tab" data-toggle="tab">Projects</a></li>
+              <li role="presentation"><a href="#category" aria-controls="category" role="tab" data-toggle="tab">Skills</a></li>
+            </ul>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane fade in active" id="popular">
+                <ul class="list-unstyled">
+                  <li><a href="https://github.com/iamvarunsekhar" target="_blank">Personal Blog</a></li>
+                  <li><a href="#" target="_blank">OOPS project</a></li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="category">
+                <ul class="list-unstyled">
+                  <li><a href="#">HTML , CSS , Bootstrap</a></li>
+                  <li><a href="#">Sql</a></li>
+                  <li><a href="#">Django Framework</a></li>
+		  <li><a href="#">Python</a></li>
+		  <li><a href="#">git</a></li>
+		  <li><a href="#">Pandas, scikit-learn</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        {% block content %} {% endblock %}
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <ul><b>
+            <li>|<a href="/">Home</a>|</li>
+                  <li><a href="/about">About</a>|</li>
+                  <li><a href="/contact">Contact</a>|</li>
+                  <li><a href="{% static 'personal/docs/resume.pdf' %}" target="_blank">Resume</a>|</li>
+                  <li><a href="https://github.com/iamvarunsekhar" target="_blank">Projects</a>|</li>
+		              <li><a href="/list-all-posts">BlogPosts</a>|</li>                
+             </b>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+</body>
+</html>
